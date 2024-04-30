@@ -40,7 +40,7 @@ function Login() {
 
   return (
     <div className='border rounded p-3'>
-      <div className="head h2">Login</div>
+      <div className="underline h">Login</div>
       <form className='d-flex flex-column' onSubmit={handleSubmit}>
         <label>Email</label>
         <input 
