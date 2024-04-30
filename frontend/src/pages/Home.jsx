@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 function Home() {
   return (
-    <div className='h2'>Welcome!</div>
+    <div className="home flex-row">
+      <Navbar />
+      <div className='h2'>Welcome!</div>
+    </div>
   )
 }
 
