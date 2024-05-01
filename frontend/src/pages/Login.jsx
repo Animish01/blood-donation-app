@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
@@ -39,10 +39,10 @@ function Login() {
   }
 
   return (
-    <div className='border rounded p-3'>
-      <div className="underline h">Login</div>
-      <form className='d-flex flex-column' onSubmit={handleSubmit}>
-        <label>Email</label>
+    <div className='min-h-screen flex flex-col sm:justify-center items-center'>
+      <h2 className="text-teal-900">Login</h2>
+      <form className='d-flex flex-column w-1/3' onSubmit={handleSubmit}>
+        <label className='mt-2'>Email</label>
         <input 
           type="email" 
           name='email' 
@@ -51,7 +51,7 @@ function Login() {
           placeholder='Enter email' 
         />
 
-        <label>Password</label>
+        <label className='mt-2'>Password</label>
         <input 
           type="password"
           name='password'
@@ -62,6 +62,7 @@ function Login() {
 
         <button type='submit' className='m-auto mt-3 btn btn-primary'>Login</button>
       </form>
+      <div className='mt-2'>New to platform? <Link to='/signup'>Sign Up</Link></div>
     </div>
   )
 }

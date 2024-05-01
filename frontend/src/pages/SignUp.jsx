@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 function SignUp() {
@@ -39,10 +39,10 @@ function SignUp() {
   }
 
   return (
-    <div className='border rounded p-4'>
-      <div className="head h2">SignUp</div>
-      <form className='d-flex flex-column' onSubmit={handleSubmit}>
-        <label>Username</label>
+    <div className='min-h-screen flex flex-col sm:justify-center items-center'>
+      <h2 className="text-teal-900">SignUp</h2>
+      <form className='d-flex flex-column w-1/3' onSubmit={handleSubmit}>
+        <label className='mt-2'>Username</label>
         <input 
           type="text" 
           name='userName' 
@@ -51,7 +51,7 @@ function SignUp() {
           placeholder='Enter username' 
         />
 
-        <label>Email</label>
+        <label className='mt-2'>Email</label>
         <input 
           type="email" 
           name='email' 
@@ -60,7 +60,7 @@ function SignUp() {
           placeholder='Enter email' 
         />
 
-        <label>Password</label>
+        <label className='mt-2'>Password</label>
         <input 
           type="password" 
           name='password'  
@@ -71,6 +71,7 @@ function SignUp() {
 
         <button type='submit' className='m-auto mt-3 btn btn-primary'>Sign up</button>
       </form>
+      <div className='mt-2'>Already a user? <Link to='/login'>Login</Link></div>
     </div>
   )
 }
